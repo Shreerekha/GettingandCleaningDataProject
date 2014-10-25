@@ -1,10 +1,16 @@
+---
+title: "Codebook"
+
+date: "Saturday, October 25, 2014"
+output: html_document
+---
 # Codebook for Tidy Data Project
 
 ## Table of Contents
 
   1.0 Source 
   2.0 The Experiment
-  3.0	Raw Data
+  3.0  Raw Data
   4.0	Transformations
   5.0	Variables in the Tidy Dataset
       5.0.1	Variable Naming Convention
