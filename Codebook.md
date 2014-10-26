@@ -19,9 +19,9 @@ output: html_document
 
 5.0	Variables in the Tidy Dataset
 
-  5.0.1	Variable Naming Convention
+    5.0.1	Variable Naming Convention
   
-  5.0.2	Variable Names
+    5.0.2	Variable Names
       
 ## 1.0 Source: 
 
@@ -31,7 +31,7 @@ The data for this project is from the publication "Human Activity Recognition on
 
 It is described in: 
 
-[http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones]
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
  
 1. A group of 30 volunteers were chosen as **subjects**. 
 
@@ -44,7 +44,7 @@ It is described in:
 5. These **time** domain signals, prefixed with t are filtered to separate them into **body** and **gravity** acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ), time derived to get **Jerk** signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ) and the **Magnitude** of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 
 6. A Fast Fourier Transform (FFT) is applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, 
-fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (The 'f'to indicate **frequency** domain  
+fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (The 'f' is to indicate **frequency** domain  
 signals).
 
 7. Multiple statistical measurements such as **mean, std.deviation**, correlation, max, min etc are computed on  
@@ -56,7 +56,7 @@ These statistical variables form the raw data for the project.
 
 The raw data was downloaded from:
 
-[https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip] 
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 The following files are used to get the raw data for the project.
 
@@ -88,10 +88,11 @@ features.txt.
 2.	Combine subject_test, X_test and y_test files to form one table. Name the columns using names from the features.txt.
 3.	Merge the two tables to form one.
 
-4.	Extract variables corresponding to mean and standard deviation. Note:
-Only those variables that use the mean() or std() are extracted. 
-meanFreq() measurements are NOT included because they are weighted averages. 
-Angle measurements are also excluded. 
+4.	Extract variables corresponding to mean and standard deviation. 
+
+Note:
+Only those variables that use the mean() or std() are extracted. meanFreq() measurements are NOT included because they are weighted averages. Angle measurements are also excluded.
+
 This subsets the data to 66 variables. 
 
 5.	Activities are labeled based on the activity_labels.txt.
@@ -114,17 +115,28 @@ with minimal changes.
 domain of the signal and the processing, as described in section 2.0. 
     
  a.	Time: denotes time domain signal
+ 
  b.	Freq: denotes frequency domain signal
+ 
  c.	Body: denotes the body acceleration part of the signal
+ 
  d.	Gravity: denotes the gravity acceleration part of the signal
+ 
  e.	Acc: Accelerometer o/p
+ 
  f.	Gyro: Gyroscope o/p
+ 
  g.	Jerk: denotes the time derived acceleration o/p
+ 
  h.	Magnitude: Magnitude the 3 dimensional signal.
+ 
  i.	X, Y, Z: Axes of measurement
+ 
  j.	Mean: mean function
+ 
  k.	Std dev: standard deviation function 
- l.	averageof: denotes that the average of the variable is what is displayed.
+ 
+ l.	averageof: denotes that the average variable is displayed.
     
 2. Hyphens, parentheses, and white spaces are removed
     
