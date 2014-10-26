@@ -7,6 +7,7 @@ output: html_document
 # Read Me file for the Getting and Cleaning Data  Course Project
 
 ## Overview
+
 The data for this project is from the publication "Human Activity Recognition on Smartphones using Multiclass Hardware" by David Anguita et al. [1].
 The project was to read the data from this experiment, transform it as specified in the assignment, and create a new tidy data set.
 Please refer to the **Codebook.md** that describes the experiment and how the raw data was captured and estimated, transformed and the variables of the data.
@@ -15,7 +16,7 @@ Please refer to the **Codebook.md** that describes the experiment and how the ra
 1. Set path to your working directory.
 2. Download the file run_analysis.R to your working directory. This is the source code.
 3. Download and unzip the file 
-[https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip] in your working directory.
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip in your working directory.
 Your working directory  now has a folder called UCI HAR Dataset. It has two sub folders, **train and test**.
 
 
@@ -48,6 +49,7 @@ data that is more user friendly and accurate.
 
 
 ## Dependencies
+
 The run_analysis.R program uses the dplyr library. If not installed already,  the program will install the dplyr package.
 
 
@@ -77,40 +79,41 @@ View(results)
 
 **Step 1**: 
 
-  Merge testtable and train table into one. This table - testtrain has 563 columns and 10299 rows.
+Merge testtable and train table into one. This table - testtrain has 563 columns and 10299 rows.
 
 **Step 2** 
 
-  Extract Required Columns (uses grepl and paste0 functions) 
+Extract Required Columns (uses grepl and paste0 functions) 
   
-  **Only variables that have mean() and std() in the column names are extracted.The feature_info.txt says that   meanFreq measurements are weighted averages and not simple arithmetic means. So they are excluded.**
+**Only variables that have mean() and std() in the column names are extracted.The feature_info.txt says that   meanFreq measurements are weighted averages and not simple arithmetic means. So they are excluded.**
   
 **Angle measurements with the word Mean are excluded because they seem to measure the angle between 2 values, one 
 of which is a mean.**
 
-	This results in a table of 68 columns, including subject and activity.
+This results in a table of 68 columns, including subject and activity.
 
 **Step 3**
 
-	Read activity_labels.txt. This file has the names and identifiers for activities.
+Read activity_labels.txt. This file has the names and identifiers for activities.
   
-  Store the names of the activities in a vector called activity name.
+Store the names of the activities in a vector called activity name.
   
-	Convert the activity column to factor, with labels as in activity name.
+Convert the activity column to factor, with labels as in activity name.
 
 **Step 4**
-  13. Give Meaningful variable names. The choice of variable names and the naming convention are explained in the  
-      codebook.md.
+
+Give Meaningful variable names. The choice of variable names and the naming convention are explained in the  
+codebook.md.
 
 **Step 5**
 
-  Group data by subject and activity using group_by function.
+Group data by subject and activity using group_by function.
   
-	Create a new table with the mean of each variable grouped by subject and activity. summarise_each is used to get 
-      the result.
+Create a new table with the mean of each variable grouped by subject and activity. summarise_each is used to get 
+the result.
       
 **Output Data**
 
-  Write the tidy data to a text file tidydata.txt in the working directory.
+Write the tidy data to a text file tidydata.txt in the working directory.
 
  
