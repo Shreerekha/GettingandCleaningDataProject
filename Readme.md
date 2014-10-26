@@ -9,7 +9,7 @@ output: html_document
 ## Overview
 The data for this project is from the publication "Human Activity Recognition on Smartphones using Multiclass Hardware" by David Anguita et al. [1].
 The project was to read the data from this experiment, transform it as specified in the assignment, and create a new tidy data set.
-Please refer to the **codebook.md** that describes the experiment and how the raw data was captured and estimated, transformed and the variables of the data.
+Please refer to the **Codebook.md** that describes the experiment and how the raw data was captured and estimated, transformed and the variables of the data.
 
 ## Installation
 1. Set path to your working directory.
@@ -64,6 +64,7 @@ View(results)
 
 
 ## Algorithm
+
 **Load Data**
   1. Read Features File. This file has the names of all variables computed in the experiment.
   2. Store the names of all features(variables) in a vector called variable name.
@@ -75,19 +76,26 @@ View(results)
   6. Give descriptive  names: subject, id and the variables from features.txt.
 
 **Step 1**: 
+
   Merge testtable and train table into one. This table - testtrain has 563 columns and 10299 rows.
 
 **Step 2** 
+
   Extract Required Columns (uses grepl and paste0 functions) 
-  **Only variables that have mean() and std() in the column names are extracted.The feature_info.txt says that  
-  meanFreq measurements are weighted averages and not arithmetic means. So they are excluded.**
-	**Angle measurements with the word Mean are excluded because they seem to measure the angle between 2 values, one 
-  of which is a mean.**
+  
+  **Only variables that have mean() and std() in the column names are extracted.The feature_info.txt says that   meanFreq measurements are weighted averages and not simple arithmetic means. So they are excluded.**
+  
+**Angle measurements with the word Mean are excluded because they seem to measure the angle between 2 values, one 
+of which is a mean.**
+
 	This results in a table of 68 columns, including subject and activity.
 
 **Step 3**
+
 	Read activity_labels.txt. This file has the names and identifiers for activities.
+  
   Store the names of the activities in a vector called activity name.
+  
 	Convert the activity column to factor, with labels as in activity name.
 
 **Step 4**
@@ -95,10 +103,14 @@ View(results)
       codebook.md.
 
 **Step 5**
+
   Group data by subject and activity using group_by function.
+  
 	Create a new table with the mean of each variable grouped by subject and activity. summarise_each is used to get 
       the result.
+      
 **Output Data**
+
   Write the tidy data to a text file tidydata.txt in the working directory.
 
  
